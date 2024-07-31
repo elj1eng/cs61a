@@ -104,9 +104,3 @@ def hailstone(n):
         count += 1
     print(int(n))
     return count
-        
-
-
-    
-
-
