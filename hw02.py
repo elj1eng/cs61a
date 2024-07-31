@@ -168,6 +168,15 @@ def interleaved_sum(n, odd_func, even_func):
     True
     """
     "*** YOUR CODE HERE ***"
+    def sum(k):
+        if k > n:
+            return 0
+        elif k == n:
+            return odd_func(k)
+        else:
+            return odd_func(k) + even_func(k + 1) + sum(k + 2)
+    return sum(1)
+
 
 
 def next_larger_coin(coin):
@@ -222,4 +231,10 @@ def count_coins(total):
     True
     """
     "*** YOUR CODE HERE ***"
-
+    def count(i, k):
+        if i == 0:
+            return 1
+        if i < 0 or not k:
+            return 0
+        return count(i-k, k) + count(i, next_smaller_coin(k))
+    return count(total, 25)
