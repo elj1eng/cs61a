@@ -139,8 +139,9 @@ def digit_distance(n):
     "*** YOUR CODE HERE ***"
     if n < 10:
         return 0
-    remainder = '{:02d}'.format(n % 100)
-    result = abs(int(str(remainder)[0]) - int(str(remainder)[1]))
+    firstDigit= (n % 100) // 10
+    secondDigit = (n % 100) % 10
+    result = abs(firstDigit - secondDigit)
     return result + digit_distance(n//10)
 
 
