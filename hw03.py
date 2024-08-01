@@ -179,7 +179,6 @@ def max_path_sum(t):
         result = max(max_path_sum(_), result)
     return result + t[0]
         
-    [1,[3,4]]
 
 def print_move(origin, destination):
     """Print instructions to move a disk."""
