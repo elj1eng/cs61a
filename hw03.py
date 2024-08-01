@@ -147,6 +147,16 @@ def berry_finder(t):
     True
     """
     "*** YOUR CODE HERE ***"
+    for _ in t:
+        if _ == "berry":
+            return True
+        else:
+            try:
+                if berry_finder(_):
+                    return True
+            except:
+                continue
+    return False
 
 
 HW_SOURCE_FILE=__file__
@@ -162,7 +172,14 @@ def max_path_sum(t):
     17
     """
     "*** YOUR CODE HERE ***"
-
+    result = 0
+    if is_leaf(t):
+        return t[0]
+    for _ in t[1:]:
+        result = max(max_path_sum(_), result)
+    return result + t[0]
+        
+    [1,[3,4]]
 
 def print_move(origin, destination):
     """Print instructions to move a disk."""
